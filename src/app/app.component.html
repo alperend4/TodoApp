@@ -1,0 +1,29 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <h1 class="text-center text-danger">Çalışma Planım...</h1>
+      <p class="text-info"> "Bu Hafta Üzerinde Çalışacağım Konular:</p>
+      <div class="card input-group-prebend">
+        <div class="card-body">
+          <input type="text" #job class="form-control" placeholder="Eklenecek çalışmayı yazın." name="job"
+            ngModel>
+
+          <input type="button" class="btn btn-info text-white" (click)="addjob(job.value)" value="Ekle" />
+        </div>
+      </div>
+      <div *ngFor="let job of jobs" class="card bg-danger text-white">
+        <div class="card-body">
+          <div class="row ">
+            <div class="col-sm-10">
+              {{job}} 
+            </div>
+            <div class="col-sm-2">
+
+              <input type="button" class="btn btn-info text-white" (click)="removeJob(job)" value="Çıkart" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
